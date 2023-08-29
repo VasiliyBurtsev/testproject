@@ -3,8 +3,8 @@
 #include <locale>
 #include <vector>
 #include <sstream>
-#pragma comment(lib, "urlmon.lib")
-//#include <curl/curl.h>
+#include <curl/curl.h>
+#include "json.h"
 using namespace std;
 const string REST_API = "https://rdb.altlinux.org/api/";
 struct binary_package
