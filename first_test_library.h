@@ -51,7 +51,12 @@ void readList(string url,string branch, string arch,string method){
         cout <<  curl_easy_perform(req);
 };
 void writeListJSON(){
-    
+    // Парсим строку и получаем объект JSON
+  json j = json::parse(json_str);
+  // Достаём значения
+  string branch = j["branch"];             cout << "branch " << branch << endl;
+  binary_package pack = j["pack"]; cout << "value " << value << endl;
+  cout << "every " << to_string(j["answer"]["everything"].get<int>()) << endl;
 };
 
 bool IsElemInList(list<binary_package> str_list, binary_package pack){
